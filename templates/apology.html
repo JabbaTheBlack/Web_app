@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <title>Apology</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+        }
+        .apology-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            animation: fadeInOut 2s ease-in-out; /* Flash animation */
+        }
+        .apology-content {
+            text-align: center;
+        }
+        .apology-image {
+            margin-bottom: 20px;
+        }
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="apology-container">
+        <div class="apology-content">
+            <img class="apology-image" src="static/oops.jpg" alt="Apology Image">
+            <h1>Error</h1>
+            <p>{{ message }}</p>
+        </div>
+    </div>
+
+    <script>
+        // Redirect to login page after 2.2 seconds
+        setTimeout(function() {window.location.href = "/login"; }, 2200);
+    </script>
+</body>
+</html>

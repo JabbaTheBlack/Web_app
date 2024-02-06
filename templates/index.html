@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stocks</title>
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <!-- Header section -->
+    <header>
+        <div class="container">
+            <!-- Website title -->
+            <h1>Stocks</h1>
+            <!-- Navigation menu -->
+            <nav>
+                <ul>
+                    <!-- Portfolio link -->
+                    <li><a href="/portfolio" style="font-size: 20px; margin-right: 20px;">Portfolio</a></li>
+                    <!-- Account link -->
+                    <li><span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776; Account</span></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Main content section -->
+    <main>
+        <!-- Search form -->
+        <form id="searchForm" action="/stock_price" method="post">
+            <label for="symbol">Enter Stock Symbol:</label>
+            <input type="text" id="symbol" name="symbol" required>
+            <button type="submit">Get Price</button>
+            <p>Stock Symbol: {{ symbol }}</p>
+            <p>Stock Price: {{ price }}</p>
+        </form>
+    </main>
+    <!-- Account sidebar -->
+    <div id="sidebar">
+        <!-- Close button for sidebar -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <!-- Links in the sidebar -->
+        <a href="/change_password">Change Password</a>
+        <a href="/logout">Sign Out</a>
+    </div>
+
+    <!-- JavaScript for sidebar functionality -->
+    <script>
+        function openNav() {
+            document.getElementById("sidebar").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("sidebar").style.width = "0";
+        }
+    </script>
+
+    <footer>
+        <div class="container">
+            <!-- Copyright information not to be taken seriously-->
+            <p>&copy; Jabba</p>
+        </div>
+    </footer>
+</body>
+</html>

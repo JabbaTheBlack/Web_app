@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles for the login page */
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 96vh;
+            background-image: url('static/login_page_stock.gif');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative; /* Needed to position the login form */
+        }
+
+        .login-form {
+            max-width: 400px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Center the form content */
+        }
+
+        .login-form h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input {
+            width: 88%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .register-link{
+            margin-top: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+        .register-link a{
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Login container -->
+    <div class="login-container">
+        <!-- Login form -->
+        <div class="login-form">
+            <h1>Login</h1>
+            <!-- Login form -->
+            <form action="/login" method="POST">
+                <!-- Username input -->
+                <div class="form-group">
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+                <!-- Password input -->
+                <div class="form-group">
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <!-- Submit button -->
+                <button type="submit" class="btn">Login</button>
+            </form>
+            <!-- Register link -->
+            <p class="register-link">New User? <a href="/register">Register here.</a></p>
+        </div>
+    </div>
+</body>
+</html>

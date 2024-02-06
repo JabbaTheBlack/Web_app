@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stocks</title>
+    <link rel="stylesheet" href="/static/styles.css"> <!-- Link to external stylesheet -->
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="container">
+                <h1><a href="/">Stocks</a></h1> <!-- Header with link to homepage -->
+                <nav>
+                    <ul>
+                        <li><a href="/portfolio" style="font-size:20px; cursor:pointer">Portfolio</a></li> <!-- Link to portfolio page -->
+                        <li><span style="font-size:20px;cursor:pointer" onclick="openNav()">&#9776; Account</span></li> <!-- Button to open account sidebar -->
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- Search form -->
+        <div id="searchForm">
+            <form action="/add_to_portfolio" method="post">
+                <label for="symbol">Enter Stock Symbol:</label>
+                <input type="text" id="symbol" placeholder="ticker" name="symbol" required>
+                <label for="quantity">Quantity:</label>
+                <input type="text" id="quantity" placeholder="number of stocks" name="quantity">
+                <button type="submit">Add to Portfolio</button>
+            </form>
+        </div>
+        <!-- Portfolio list -->
+        <div id="portfolio">
+            <h2>Your Portfolio</h2>
+            <ul>
+                {% if portfolio_data %}
+                    <li>Name - Price - Quantity - Purchase Date</li>
+                    {% for data in portfolio_data %}
+                    <li>{{ data.symbol }} - ${{ data.price }} - {{ data.quantity }} - {{ data.purchase_date }}</li>
+                    {% endfor %}
+                {% else %}
+                    <li>Your portfolio is empty</li>
+                {% endif %}
+            </ul>
+        </div>
+    </main>
+    <!-- Account sidebar -->
+    <div id="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> <!-- Button to close account sidebar -->
+        <a href="/change_password">Change Password</a> <!-- Link to change password page -->
+        <a href="/logout">Sign Out</a> <!-- Link to logout -->
+    </div>
+
+    <!-- JavaScript for opening and closing account sidebar -->
+    <script>
+        function openNav() {
+            document.getElementById("sidebar").style.width = "250px"; // Open sidebar by setting width
+        }
+
+        function closeNav() {
+            document.getElementById("sidebar").style.width = "0"; // Close sidebar by setting width to 0
+        }
+    </script>
+     <!-- Copyright information not to be taken seriously-->
+    <footer>
+        <div class="container">
+            <p>&copy; Jabba</p>
+        </div>
+    </footer>
+</body>
+</html>

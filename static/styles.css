@@ -1,0 +1,128 @@
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+        align-items: center; /* Center horizontally */
+    }
+
+    header {
+        background-color: #0d47a1;
+        color: #ffffff;
+        padding: 20px 0;
+        width: 100%; /* Take full width */
+    }
+
+    header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%; /* Adjust container width */
+        margin: 0 auto; /* Center container */
+    }
+
+    main {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%; /* Adjust main width */
+        margin: 0 auto; /* Center main content */
+    }
+
+    footer {
+        background-color: #0d47a1;
+        color: #ffffff;
+        text-align: right;
+        padding: 10px 0;
+        width: 100%; /* Take full width */
+    }
+    footer .container{
+        width: 90%;
+        margin: 0 auto;
+    }
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+    }
+
+    nav ul li {
+        margin-right: 20px;
+    }
+
+    nav ul li:last-child {
+        margin-right: 0;
+    }
+
+    nav ul li a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    nav ul li span:hover{
+        color: #999999;
+    }
+    nav ul li:last-child {
+        margin-left: 10px;
+        margin-top: -5px; /* Adjust the margin-top to move the "Account" text upward */
+    }
+
+    nav ul li a:hover{
+        color: #999999;
+    }
+
+    /* Slide-in navigation bar */
+    #sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+
+    #sidebar a {
+        padding: 8px 15px;
+        text-decoration: none;
+        font-size: 18px; /* Smaller font size */
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    #sidebar a:hover {
+        color: #f1f1f1;
+    }
+
+    #sidebar .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+    @media screen and (max-height: 450px) {
+        #sidebar {padding-top: 15px;}
+        #sidebar a {font-size: 16px;} /* Adjusted font size for smaller screens */
+    }
+
+    #portfolio ul li {
+        font-size: 20px; /* Larger font size for portfolio text */
+        margin-left: 20px; /* Align with the "Account" link */
+    }
+    header a {
+    color: #ffffff; /* Set the text color to white */
+    text-decoration: none; /* Remove underline */
+    }
+
+    /* Style the anchor tag on hover */
+    header a:hover {
+        color: #999999; /* Set the text color to gray */
+    }
